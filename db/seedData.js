@@ -5,7 +5,7 @@ var faker = require('faker');
 //hello kitty data
 let hellokitty = {
 	titleCover: 'https://s3.us-east-2.amazonaws.com/images.for.hrr/header.jpg',
-	tital: 'Hello Kitty and Sanrio Friends Racing',
+	title: 'Hello Kitty and Sanrio Friends Racing',
 	price: '$19,999.99',
 	aboutInfo: `Come and join Hello Kitty with her best friends in this action-packed Family Racing Party never before available on Steam!
 
@@ -34,10 +34,10 @@ let hellokitty = {
 		storage: '900 MB available space',
 		},
 	genre: ['cats', 'adventure', 'hello', 'kitty', 'racing'],
-	develouper: 'bethesda',
+	developer: 'bethesda',
 	publisher: 'bioware',
 	releaseDate: 'hopefully never',
-	steamAcheivments:['pic1', 'pic2', 'pic3'],
+	steamAcheivments:['https://s3.us-east-2.amazonaws.com/images.for.hrr/869-100x100.jpg', 'https://s3.us-east-2.amazonaws.com/images.for.hrr/818-100x100.jpg','https://s3.us-east-2.amazonaws.com/images.for.hrr/612-100x100.jpg'],
 	languages: [{
 		languageName: 'English',
 		interface: true,
@@ -135,6 +135,7 @@ let SeedDb = ()=>{
 										subtitles:  faker.random.boolean(),
 										}],
       attributes:{
+				achievements:  faker.random.boolean(),
         controllerSupport:  faker.random.boolean(),
         partialControllersupport:  faker.random.boolean(),
         remotePlay: faker.random.boolean()
