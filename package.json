@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "seed": "node db/seedData.js"
   },
   "repository": {
     "type": "git",
@@ -17,7 +18,9 @@
   },
   "homepage": "https://github.com/Jamie-Lee-Birdis/body#readme",
   "dependencies": {
+    "bluebird": "^3.7.2",
     "express": "^4.17.1",
+    "faker": "^5.1.0",
     "mongo": "^0.1.0",
     "mongoose": "^5.10.6"
   }
