@@ -6,9 +6,8 @@ mongoose.connect('mongodb://localhost/games')
 
 let gameSchema = mongoose.Schema(
 	{
-	_id: {type: Number, required: true, unique: true},
 	titleCover: {type: String, required: true},
-	tital: {type: String},
+	title: {type: String},
 	price: {type: String},
 	aboutInfo: {type: String},
 	requirements: {
@@ -20,10 +19,10 @@ let gameSchema = mongoose.Schema(
 		storage: {type: String},
 		},
 	genre: [{type: String}],
-	develouper: {type: String},
+	developer: {type: String},
 	publisher: {type: String},
 	releaseDate: {type: String},
-	SteamAcheivments:[{type: String}],
+	steamAcheivments:[{type: String}],
 	languages: [{
 		languageName: {type: String},
 		interface: {type: Boolean},
@@ -35,9 +34,13 @@ let gameSchema = mongoose.Schema(
 		partialControllersupport:  {type: Boolean},
 		remotePlay: {type: Boolean}
 		},
-	moreLikeThis: [{type: Number}]
+	moreLikeThis: [{titleImage:{type: String}, price: {type: String}}]
 })
 
+
+let Game = mongoose.model('Game', gameSchema);
+
+module.exports = Game;
 
 
 
