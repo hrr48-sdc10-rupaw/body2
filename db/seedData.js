@@ -79,12 +79,16 @@ let hellokitty = {
 
 
 // the actual seeding function
-let SeedDb = ()=>{
+let SeedDb = async ()=>{
+	await Game.remove({}, function(err) {
+		console.log('collection removed')
+ 	});
   let hk = new Game(hellokitty);
   hk.save((err)=>{if(err){console.log(err)}});
   let pictures = ['https://s3.us-east-2.amazonaws.com/images.for.hrr/869-100x100.jpg', 'https://s3.us-east-2.amazonaws.com/images.for.hrr/818-100x100.jpg','https://s3.us-east-2.amazonaws.com/images.for.hrr/612-100x100.jpg'];
 
   for(var i = 2; i <= 100; i++){
+
     game = new Game({
       titleCover: 'https://s3.us-east-2.amazonaws.com/images.for.hrr/header.jpg',
       title: faker.random.words(3),
@@ -162,6 +166,7 @@ let SeedDb = ()=>{
   }
 	console.log('seeding completed');
 }
+
 
 SeedDb();
 setTimeout(()=>{mongoose.disconnect()}, 1000);
