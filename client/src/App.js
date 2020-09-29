@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-
+import AddToCart from './components/addToCart.js';
 class App extends React.Component {
   constructor(props){
     super(props);
@@ -30,7 +30,7 @@ class App extends React.Component {
   render(){
     return (
       <div className="App">
-
+        <AddToCart gameData = {this.state.currentGame}/>
       </div>
     );
   }
