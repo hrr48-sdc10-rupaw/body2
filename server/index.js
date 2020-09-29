@@ -14,7 +14,7 @@ console.log(__dirname);
 // });
 
 app.get('/moist-air/game',(req, res)=>{
-  let data = Game.find({title: req.body.query});
+  let data = Game.find({});
   data.exec((err, gameData)=>{
     if(err){
       res.send('there was an error');
@@ -25,6 +25,9 @@ app.get('/moist-air/game',(req, res)=>{
   console.log(JSON.stringify(req.body.query));
 })
 
-app.listen(port, () => {
+let server = app.listen(port, () => {
   console.log(`listening at ${port}...`);
 });
+
+module.exports.app = app;
+module.exports.server = server;

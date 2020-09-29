@@ -156,20 +156,24 @@ let SeedDb = async ()=>{
         }]
     })
 
-    game.save((err)=>{
+   await game.save((err)=>{
       if(err){
         console.log(err);
       } else {
-        console.log(`added document to the database...`)
-      }
+				console.log('added a document to the database....')
+			}
     })
   }
 	console.log('seeding completed');
 }
 
+function fullSeed(){
+	SeedDb();
+	setTimeout(()=>{mongoose.disconnect()}, 1000);
+}
 
-SeedDb();
-setTimeout(()=>{mongoose.disconnect()}, 1000);
+fullSeed();
+module.exports = fullSeed;
 
 
 
