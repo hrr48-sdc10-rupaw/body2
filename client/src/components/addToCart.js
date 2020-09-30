@@ -1,10 +1,9 @@
 import React from 'react';
-
+import style from '../css/addToCart.css';
 
 let AddToCart = (props) =>{
-  console.log(props.gameData);
   return(
-  <div>
+  <div id="containerATC">
     <h2 id ='BuyTitle'>{`Buy ${props.gameData.title}`}</h2>
     <span id='ATCwindowsLogo'>(+)</span>
     <div id='ATCbtnContainter'>
