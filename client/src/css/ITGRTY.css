@@ -1,0 +1,46 @@
+.RTYheaderBox{
+  margin-bottom: 0;
+  background-image: linear-gradient(to right, rgb(19,27,37),rgb(15,20,27));
+  color: #fff;
+  font-size: 16px;
+  padding: 10px 18px;
+  margin-left: 16px;
+}
+
+.RTYpara{
+  color: #acb2b8;
+  font-size: 14px;
+  line-height: 22px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.RTYtitle{
+  font-size: 16px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #fff;
+}
+
+.RTYbtn{
+  border-radius: 2px;
+  border: none;
+  padding: 1px;
+  display: inline-block;
+  cursor: pointer;
+  text-decoration: none !important;
+  color: #67c1f5 !important;
+  background: rgba( 103, 193, 245, 0.2 );
+  padding: 0 15px;
+  font-size: 15px;
+  line-height: 30px;
+}
+
+.RTYbtn:hover{
+  color: #fff !important;
+  background: #417a9b;
+  background: -webkit-linear-gradient( 150deg, #417a9b 5%,#67c1f5 95%);
+  background: linear-gradient( -60deg, #417a9b 5%,#67c1f5 95%);
+}
+
+.RTYbtn-container{
+  font-family: Arial, Helvetica, sans-serif;
+}

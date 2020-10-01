@@ -1,17 +1,19 @@
 import React from 'react';
-import style from '../css/addToCart.css';
+import '../css/addtocart.css';
+
 
 let AddToCart = (props) =>{
   return(
   <div id="containerATC">
-    <h2 id ='BuyTitle'>{`Buy ${props.gameData.title}`}</h2>
-    <span id='ATCwindowsLogo'>(+)</span>
+    <h1 id ='BuyTitle'>{`Buy ${props.gameData.title}`}</h1>
+      <img className="windowsIcon" alt = "windows-icon" src="https://s3.us-east-2.amazonaws.com/images.for.hrr/windows.svg"></img>
     <div id='ATCbtnContainter'>
-  <span>{props.gameData.price}</span>
-      <button id="ATCbtn">Add to Cart</button>
+  <span className="price">{props.gameData.price}</span>
+      <button className="ATCbtn">Add to Cart</button>
     </div>
   </div>
   )
 }
 
 export default AddToCart;
+

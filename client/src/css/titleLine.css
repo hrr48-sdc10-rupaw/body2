@@ -1,3 +1,44 @@
 #containerATG{
-  border: 3px, solid, red;
+  border: 3px solid red;
+}
+
+.grade {
+  height: 2px;
+  background-image: linear-gradient(to right, rgba(51,94,120, 1), rgba(255,0,0,0));
+}
+
+h2{
+  font-size: 14px;
+  text-transform: uppercase;
+  color: #fff;
+  letter-spacing: 2px;
+  font-weight: normal;
+  padding-top: 2px;
+  margin: 0;
+}
+
+.reqName{
+  color: #61686D;
+  font-size: 12px;
+  margin-right: 4px;
+  font-weight: normal;
+  margin-bottom: 2px;
+  text-transform: none;
+}
+
+#minimum{
+  font-weight: normal;
+  font-size: 10px;
+  color: #bcc6cd;
+  text-transform: uppercase;
+  display: inline-block;
+  margin-right: 4px;
+}
+
+.SREQ{
+  line-height: 1.5em;
+  font-size: 14px;
+  font-family: "Motiva Sans", Sans-serif;
+  font-weight: normal;
+  color: #acb2b8;
 }

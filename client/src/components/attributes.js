@@ -7,12 +7,12 @@ let Attributes = (props)=>{
 
   return(
     <div id="attributes">
-      <DarkBox>
+      <DarkBox key="key2">
       {Object.keys(atts).map((att) => {
         if(atts[att]){
-          return <PannelBar text={att} icon="(X)"/>
+          return <PannelBar key={att} text={att} icon="(X)"/>
         }
-        return <div/>
+        return <div key={att}/>
       })}
       </DarkBox>
     </div>
