@@ -1,12 +1,12 @@
 import React from 'react';
 import TitleLine from './titleLine.js';
-
+import '../css/aboutthisgame.css';
 let AboutThisGame = (props)=>{
 
   return(
-   <TitleLine title="ABOUT THIS GAME">
-      {props.gameData.aboutInfo.split('\n').map((line) => {
-          return(<div><p className="aboutParagraph">{line}</p></div>)
+   <TitleLine className="about" title="ABOUT THIS GAME">
+      {props.gameData.aboutInfo.split('\n').filter((string)=>string!=='').map((line) => {
+          return(<div key={line}><p className="aboutParagraph">{line}</p></div>)
         })}
    </TitleLine>
   );

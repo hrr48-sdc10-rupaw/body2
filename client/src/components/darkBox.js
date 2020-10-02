@@ -1,13 +1,14 @@
 import React from 'react';
-import style from '../css/darkBox.css';
+import '../css/darkBox.css';
 
 
 let DarkBox = (props) =>{
   return (
-    <div id="darkbox">
+    <div className={props.className||"darkbox"}>
       {props.children}
     </div>
   )
 }
 
 export default DarkBox;
+

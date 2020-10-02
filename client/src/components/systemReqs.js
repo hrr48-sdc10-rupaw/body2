@@ -3,10 +3,10 @@ import React from 'react';
 
 let SystemReqs = (props)=>{
   return (
-<TitleLine title = "SYSTEM REQUIREMENTS">
+<TitleLine className="SREQ" title = "SYSTEM REQUIREMENTS">
       <div>
-        <span>MINIMUM:</span><br />
-        <span><span className="reqName">OS: </span>{props.gameData.requirements.os}</span>
+        <span id="minimum">MINIMUM:</span><br />
+        <span><span className="reqName">OS: </span>{props.gameData.requirements.os}</span><br/>
         <span><span className="reqName">Processor: </span>{props.gameData.requirements.processor}</span><br></br>
         <span><span className="reqName">Memory: </span>{props.gameData.requirements.memory}</span><br></br>
         <span><span className="reqName">Graphics: </span>{props.gameData.requirements.graphics}</span><br></br>

@@ -1,11 +1,12 @@
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
+var cors = require('cors')
 const path = require('path')
 const port = 3000;
 const Game = require('../db/index.js');
 
-// app.use(bodyParser.urlencoded({extended: true}));
+app.use(cors())
 app.use(express.json())
 app.use(express.static(path.join(__dirname, '../client/build')))
 
