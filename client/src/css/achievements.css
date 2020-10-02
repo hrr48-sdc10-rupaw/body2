@@ -1,8 +1,4 @@
-/* <span>{`Includes ${ach.length} Moist-Air Achievements`}</span>
-      <div className="achImgContainer">
-          {ach.map((img)=><img key={img} className ="achImg" alt ="achivs"src={img}></img>)}
-          <button className = "AchViewAllBtn">{`View all ${ach.length}`}</button>
-      </div> */
+
 
 .achTitle{
   font-family: Arial, Helvetica, sans-serif;
@@ -27,25 +23,24 @@
 
 .AchViewAllBtn{
   background-color: rgba( 103, 193, 245, 0.2 );
-    border-radius: 1px;
-    font-size: 13px;
-    font-family: "Arial", "Motiva Sans", Sans-serif;
-    font-weight: normal;
-    color: #67c1f5;
-    text-align: center;
-    /* height: 64px; */
-    /* padding: 0 4px; */
-    margin-right: 0px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    line-height: 14px;
-    cursor: pointer;
-    border: none;
-    min-width: 72px;
-    min-height: 64px;
-
+  border-radius: 1px;
+  font-size: 13px;
+  font-family: "Arial", "Motiva Sans", Sans-serif;
+  font-weight: normal;
+  color: #67c1f5;
+  text-align: center;
+  /* height: 64px; */
+  /* padding: 0 4px; */
+  margin-right: 0px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  line-height: 14px;
+  cursor: pointer;
+  border: none;
+  min-width: 64px;
+  min-height: 64px;
 }
 
 .AchViewAllBtn:hover{

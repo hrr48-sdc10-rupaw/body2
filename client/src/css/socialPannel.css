@@ -1,0 +1,32 @@
+.flagIcon{
+  height: 20px;
+  width: 20px;
+  margin: 7px 0;
+  vertical-align: top;
+
+}
+
+.socPanBtn{
+  margin-right: 3px;
+  padding: 0 15px;
+  font-size: 15px;
+  line-height: 30px;
+  border-radius: 2px;
+  border: none;
+  display: inline-block;
+  cursor: pointer;
+  text-decoration: none !important;
+  color: #67c1f5 !important;
+  background: rgba( 103, 193, 245, 0.2 );
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.socPanBtnContainer{
+  display: flex;
+}
+
+.socPanBtn:hover{
+  text-decoration: none !important;
+  color: #fff !important;
+  background: linear-gradient( -60deg, #417a9b 5%,#67c1f5 95%);
+}

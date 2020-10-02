@@ -10,7 +10,7 @@
   padding-bottom: 26px;
   margin-bottom: 28px;
   z-index: 1;
-  border: 3px solid red;
+  /* border: 3px solid red; */
   display: flex;
   justify-content: space-between;
 }

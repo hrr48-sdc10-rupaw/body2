@@ -1,26 +1,4 @@
-/* <DarkBox>
-<div className="infoPanTitleSet">
-<span className="infoPanTitle">TITLE: <span className="infoPanSet">{props.gameData.title}</span></span>
-</div>
-<div className="infoPanTitleSet">
-<span className="infoPanTitle">GENRE: {props.gameData.genre.map((item)=><ButtonLink key={item} text={item}/>)}</span>
-</div>
-<div className="infoPanTitleSet">
-  <span className="infoPanTitle">DEVELOPER: <ButtonLink text={props.gameData.developer}/></span>
-</div>
-<div className="infoPanTitleSet">
-  <span className="infoPanTitle">PUBLISHER: <ButtonLink text={props.gameData.publisher}/></span>
-</div>
-<div className="infoPanTitleSet">
-<span className="infoPanTitle">RELEASE DATE: <span className="infoPanRD">{props.gameData.releaseDate}</span></span>
-</div>
-<div className="IPPanBarContainer">
-    <PannelBar text="View update history"/>
-    <PannelBar text="Read related news"/>
-    <PannelBar text="View discussions"/>
-    <PannelBar text="Find Community Groups"/>
-</div>
-</DarkBox> */
+
 .infoPanText{
   text-transform: none;
   font-family: Arial, Helvetica, sans-serif;

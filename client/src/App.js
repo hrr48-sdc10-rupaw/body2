@@ -9,6 +9,7 @@ import Attributes from './components/attributes.js';
 import Languages from './components/languages.js';
 import Achievements from './components/achievements.js';
 import InfoPannel from './components/infoPannel.js';
+import SocialPannel from './components/socialPannel.js';
 class App extends React.Component {
   constructor(props){
     super(props);
@@ -52,6 +53,7 @@ class App extends React.Component {
           <Languages gameData = {this.state.currentGame}/>
           <Achievements gameData = {this.state.currentGame}/>
           <InfoPannel gameData = {this.state.currentGame}/>
+          <SocialPannel/>
         </div>
         </div>
         <div id="rightSide"></div>

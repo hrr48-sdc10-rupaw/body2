@@ -1,6 +1,6 @@
-#containerATG{
+/* #containerATG{
   border: 3px solid red;
-}
+} */
 
 .grade {
   height: 2px;
@@ -27,6 +27,7 @@ h2{
 }
 
 #minimum{
+  padding-top: 10px;
   font-weight: normal;
   font-size: 10px;
   color: #bcc6cd;

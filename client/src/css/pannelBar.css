@@ -1,9 +1,3 @@
-/* <div id="pannelbar">
-        <div className="PBimageContainer">
-          <img alt="icon" src={iconUrl}className="PBicon"/>
-        </div>
-          <div id="PBText">{iconText}</div>
-      </div> */
 
 #pannelbar{
   display: flex;
