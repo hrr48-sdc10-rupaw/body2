@@ -46,7 +46,6 @@
 .borderBottom{
   border-bottom: 1px solid #8F98A0;
   max-width: 282px;
-  padding: 3px 0px 3px 0px;
 }
 
 .centerText{
@@ -60,5 +59,10 @@
 
 .setGreyish{
   color: #b0aeac;
+}
+
+.noBottomPadding{
+  padding-bottom: 0px;
+  line-height: 13px;
 }
 

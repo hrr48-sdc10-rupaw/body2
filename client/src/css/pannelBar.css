@@ -1,0 +1,55 @@
+/* <div id="pannelbar">
+        <div className="PBimageContainer">
+          <img alt="icon" src={iconUrl}className="PBicon"/>
+        </div>
+          <div id="PBText">{iconText}</div>
+      </div> */
+
+#pannelbar{
+  display: flex;
+}
+
+.PBicon{
+  padding: 4px 0 4px 8px;
+  width: 26px;
+  height: 16px;
+  vertical-align: top;
+  background-color: #111A25;
+    color: #ACB2B8;
+    padding: 2px;
+
+}
+
+.PBTextContainer{
+  cursor: pointer;
+  border-radius: 1px;
+  margin: 1px;
+  min-height: 32px;
+  min-width: 32px;
+  flex-direction: row;
+  min-height: 22px;
+  padding-top: 4px;
+  padding-left: 8px;
+  padding-bottom: 4px;
+
+  background: rgba( 103, 193, 245, 0.1 );
+  color: #67c1f5;
+  width: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+}
+
+.PBimageContainer{
+
+  width: 10px;
+  background-color: #111A25;
+  border-radius: 1px;
+  border: 4px solid rgba(0, 0, 0, 0);
+  margin:1px 1px;
+  min-width: 30px;
+}
+
+.PBTextContainer:hover{
+  color: #ffffff;
+  background: linear-gradient(135deg, #67c1f5 0%,#417a9b 100%);
+}

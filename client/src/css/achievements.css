@@ -1,0 +1,53 @@
+/* <span>{`Includes ${ach.length} Moist-Air Achievements`}</span>
+      <div className="achImgContainer">
+          {ach.map((img)=><img key={img} className ="achImg" alt ="achivs"src={img}></img>)}
+          <button className = "AchViewAllBtn">{`View all ${ach.length}`}</button>
+      </div> */
+
+.achTitle{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  color: #8f98a0;
+  margin-bottom: 2px;
+}
+
+
+.achImgContainer{
+  padding: 4px 0px 4px 0px;
+  overflow: hidden;
+  margin-bottom: 5px;
+}
+
+.achImg{
+  float: left;
+  width: 64px;
+  height: 64px;
+  margin-right: 4px;
+}
+
+.AchViewAllBtn{
+  background-color: rgba( 103, 193, 245, 0.2 );
+  border-radius: 1px;
+  font-size: 13px;
+  font-family: "Arial", "Motiva Sans", Sans-serif;
+  font-weight: normal;
+  color: #67c1f5;
+  text-align: center;
+  height: 64px;
+  padding: 0 4px;
+  margin-right: 0px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  line-height: 14px;
+  cursor: pointer;
+  border: none;
+
+}
+
+.AchViewAllBtn:hover{
+  color: #ffffff;
+  text-decoration: none;
+  background: linear-gradient(135deg, #67c1f5 0%,#417a9b 100%);
+}

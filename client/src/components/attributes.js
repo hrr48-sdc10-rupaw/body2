@@ -10,7 +10,7 @@ let Attributes = (props)=>{
       <DarkBox key="key2">
       {Object.keys(atts).map((att) => {
         if(atts[att]){
-          return <PannelBar key={att} text={att} icon="(X)"/>
+          return <PannelBar key={att} text={att} icon={true}/>
         }
         return <div key={att}/>
       })}

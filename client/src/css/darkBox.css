@@ -1,6 +1,6 @@
 .darkbox{
   background-image: linear-gradient(to right, rgb(21,32,45), rgb(16,24,33));
-  /* border: 3px solid red; */
+  border: 3px solid red;
   color: #ACB2B8;
   padding: 12px;
   margin-bottom: 8px;

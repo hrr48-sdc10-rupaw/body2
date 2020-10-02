@@ -31,7 +31,7 @@ describe('IS THIS GAME RTY', function(){
 
   it('should contain true attributes', ()=>{
     let body = shallow(<Attributes gameData = {mockData}/>);
-    let expected = <PannelBar text = "test2" icon="(X)"/>;
+    let expected = <PannelBar text = "test2" icon={true}/>;
     expect(body.contains(expected)).toBe(true);
   })
 

@@ -2,12 +2,12 @@ import React from 'react';
 import axios from 'axios';
 import AddToCart from './components/addToCart.js';
 import AboutThisGame from './components/aboutThisGame.js';
-import style from './css/App.css';
+import './css/App.css';
 import SystemReqs from './components/systemReqs.js';
 import ITGRTY from './components/isThisGameRTY.js';
 import Attributes from './components/attributes.js';
 import Languages from './components/languages.js';
-
+import Achievements from './components/achievements.js';
 class App extends React.Component {
   constructor(props){
     super(props);
@@ -49,6 +49,7 @@ class App extends React.Component {
           <ITGRTY/>
           <Attributes gameData = {this.state.currentGame}/>
           <Languages gameData = {this.state.currentGame}/>
+          <Achievements gameData = {this.state.currentGame}/>
         </div>
         </div>
         <div id="rightSide"></div>

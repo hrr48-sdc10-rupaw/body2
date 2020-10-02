@@ -15,12 +15,12 @@ describe('ADDTOCART COMPONENT', function(){
   })
   it('it should fill the price block correctly', ()=>{
     var body = shallow(<AddToCart gameData = {mockData}/>);
-    var expected = <span>{mockData.price}</span>;
+    var expected = <span className="price">{mockData.price}</span>
     expect(body.contains(expected)).toBe(true);
   })
   it('it should fill the "buy title" block correctly', ()=>{
     var body = shallow(<AddToCart gameData = {mockData}/>);
-    var expected = <h2 id ='BuyTitle'>{`Buy ${mockData.title}`}</h2>;
+    var expected = <h1 id ='BuyTitle'>{`Buy ${mockData.title}`}</h1>;
     expect(body.contains(expected)).toBe(true);
   })
 })

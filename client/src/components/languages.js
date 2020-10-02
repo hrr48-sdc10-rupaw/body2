@@ -1,7 +1,7 @@
 import React from 'react';
 import DarkBox from './darkBox.js';
 import LanguageItem from './languageItem.js';
-import style from '../css/languages.css';
+import '../css/languages.css';
 
 class Languages extends React.Component{
   constructor(props){
@@ -45,9 +45,9 @@ class Languages extends React.Component{
          <span id="langHeader">Languages:</span>
           <div className="row borderBottom langItemContainer">
             <div className="flex2"></div>
-            <div className="flex1 centerText setGreyish">Interface</div>
-            <div className="flex1 centerText setGreyish">Full Audio</div>
-            <div className="flex1 centerText setGreyish">Subtitles</div>
+            <div className="flex1 centerText setGreyish noBottomPadding">Interface</div>
+            <div className="flex1 centerText setGreyish noBottomPadding">Full Audio</div>
+            <div className="flex1 centerText setGreyish noBottomPadding">Subtitles</div>
           </div>
           {this.renderLanguages()}
           {this.renderButton()}
