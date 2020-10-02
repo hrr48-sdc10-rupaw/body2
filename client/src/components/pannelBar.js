@@ -8,9 +8,10 @@ let PannelBar = (props)=>{
     partialControllersupport: ['https://s3.us-east-2.amazonaws.com/images.for.hrr/ico_partial_controller.png', 'Partial Controller Support'],
     remotePlay: ['https://s3.us-east-2.amazonaws.com/images.for.hrr/ico_remote_play_together.png', 'Remote Play Together'],
   };
-  let iconUrl = icons[props.text][0];
-  let iconText = icons[props.text][1];
+
   if(props.icon){
+    let iconUrl = icons[props.text][0];
+    let iconText = icons[props.text][1];
     return(
       <div id="pannelbar">
         <div className="PBimageContainer">
@@ -25,7 +26,7 @@ let PannelBar = (props)=>{
   return(
     <div id="pannelbar">
       <div className="PBTextContainer">
-        <div id="PBText">{iconText}</div>
+        <div id="PBText">{props.text}</div>
       </div>
     </div>
   )

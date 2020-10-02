@@ -8,6 +8,7 @@ import ITGRTY from './components/isThisGameRTY.js';
 import Attributes from './components/attributes.js';
 import Languages from './components/languages.js';
 import Achievements from './components/achievements.js';
+import InfoPannel from './components/infoPannel.js';
 class App extends React.Component {
   constructor(props){
     super(props);
@@ -50,6 +51,7 @@ class App extends React.Component {
           <Attributes gameData = {this.state.currentGame}/>
           <Languages gameData = {this.state.currentGame}/>
           <Achievements gameData = {this.state.currentGame}/>
+          <InfoPannel gameData = {this.state.currentGame}/>
         </div>
         </div>
         <div id="rightSide"></div>

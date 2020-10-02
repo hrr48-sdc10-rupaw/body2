@@ -2,7 +2,6 @@ import React from 'react';
 import {shallow, configure} from 'enzyme';
 import Achievements from '../components/achievements.js';
 import Adapter from 'enzyme-adapter-react-16';
-import PannelBar from '../components/pannelBar.js';
 configure({ adapter: new Adapter() });
 
 

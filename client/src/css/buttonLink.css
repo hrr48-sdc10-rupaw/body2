@@ -1,0 +1,16 @@
+.btnLink {
+  background: none!important;
+  border: none;
+  padding: 0!important;
+  color: #67C1F5;
+  font-size: 12px;
+  margin-top: 5px;
+  cursor: pointer;
+  font-family: "Motiva Sans", Sans-serif;
+  font-weight: 500;
+  margin-right: 5px;
+}
+
+.btnLink:hover{
+  color: white;
+}
