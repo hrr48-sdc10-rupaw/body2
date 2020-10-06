@@ -140,7 +140,6 @@ let SeedDb = async ()=>{
 										}],
       attributes:{
 				achievements:  faker.random.boolean(),
-        controllerSupport:  faker.random.boolean(),
         partialControllersupport:  faker.random.boolean(),
         remotePlay: faker.random.boolean()
         },
