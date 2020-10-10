@@ -3,7 +3,7 @@ const app = express();
 const bodyParser = require('body-parser');
 var cors = require('cors')
 const path = require('path')
-const port = 3006;
+const port = 80;
 const Game = require('../db/index.js');
 
 app.use(cors())
