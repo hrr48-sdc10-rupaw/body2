@@ -4,6 +4,7 @@ var faker = require('faker');
 
 //hello kitty data
 let hellokitty = {
+	id: 1,
 	titleCover: 'https://s3.us-east-2.amazonaws.com/images.for.hrr/header.jpg',
 	title: 'Hello Kitty and Sanrio Friends Racing',
 	price: '$19,999.99',
@@ -90,6 +91,7 @@ let SeedDb = async ()=>{
   for(var i = 2; i <= 100; i++){
 
     game = new Game({
+			id: i,
       titleCover: 'https://s3.us-east-2.amazonaws.com/images.for.hrr/header.jpg',
       title: faker.random.words(3),
       price: `$${faker.random.number()}.99`,

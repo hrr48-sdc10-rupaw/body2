@@ -3,7 +3,7 @@ const app = express();
 const bodyParser = require('body-parser');
 var cors = require('cors')
 const path = require('path')
-const port = 3000;
+const port = 3006;
 const Game = require('../db/index.js');
 
 app.use(cors())
@@ -11,7 +11,9 @@ app.use(express.json())
 app.use(express.static(path.join(__dirname, '../client/build')))
 
 app.get('/moist-air/game',(req, res)=>{
-  let data = Game.find({});
+  reqId = req.query.id;
+  let data = Game.find({'id': reqId});
+
   data.exec((err, gameData)=>{
     if(err){
       res.send('there was an error');
