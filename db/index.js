@@ -6,6 +6,7 @@ mongoose.connect('mongodb://localhost/games')
 
 let gameSchema = mongoose.Schema(
 	{
+		id:{type: Number},
 		titleCover: {type: String, required: true},
 		title: {type: String},
 		price: {type: String},
