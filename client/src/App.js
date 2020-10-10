@@ -28,7 +28,7 @@ class App extends React.Component {
   getGameData(){
     let queryString = window.location.search;
     let urlParams = new URLSearchParams(queryString);
-    let id = urlParams.get('id');
+    let id = urlParams.get('id') || 1;
     console.log(id);
     axios.get(`/moist-air/game?id=${id}`)
     .then((res)=>{
