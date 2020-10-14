@@ -1,3 +1,4 @@
+# Body
 This file is for the body section of the SDC. It does not include the hero-section or the reviews section.
 
 If first time runing this program please follw the instructions below to start application properly.
@@ -23,7 +24,7 @@ Access different products but adding query params like so:
 - http://localhost:3000/?id=85
 
 
-#CRUD Operations:
+# CRUD Operations:
 
 
 - Create | POST: '/moist-air/'
