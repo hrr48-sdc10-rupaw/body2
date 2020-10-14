@@ -41,8 +41,8 @@ Access different products but adding query params like so:
   - Uses query parameters to find games based on 'id'.
     - 'id' is not the object _id, but an id given in the original data generation script
   - Currently updates the price of the game. Can be expanded to many other peramteres for update
-
--Delete | DELETE: '/moist-air/game'
+  
+- Delete | DELETE: '/moist-air/game'
   - Deletes one game
   - Finds game to be deleted by referencing query perameters
   - Looks for the id of the game and then deletes that one document using deleteOne
