@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost/games')
+mongoose.connect('mongodb://localhost/games', { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false})
 .then(()=>console.log('connected!'))
 .catch((err)=>console.log(err));
 

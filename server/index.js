@@ -7,10 +7,11 @@ const port = 3000;
 const Game = require('../db/index.js');
 
 app.use(cors())
-app.use(express.json())
+app.use(express.json());
+app.use(bodyParser.urlencoded({extended: false}));
 app.use(express.static(path.join(__dirname, '../client/build')))
 
-app.get('/moist-air/game', (req, res) => {
+app.get('/moist-air/', (req, res) => {
   Game.find({}).exec((err, results) => {
     if (err) {
       throw err;
@@ -33,43 +34,57 @@ app.get('/moist-air/game',(req, res)=>{
   })
 })
 
-app.post('/moist-air/game', (req, res) => {
-  Game.insertOne({
-    {
+app.post('/moist-air/', (req, res) => {
+  Game.create({
       id: req.body.id,
       titleCover: req.body.titleCover,
       title: req.body.title,
       price: req.body.price,
       aboutInfo: req.body.aboutInfo,
       requirements: {
-        os: {type: String},
-        processor: {type: String},
-        memory: {type: String},
-        graphics: {type: String},
-        directX: {type: String},
-        storage: {type: String},
+        os: req.body.requirements.os,
+        processor: req.body.requirements.processor,
+        memory: req.body.requirements.memory,
+        graphics: req.body.requirements.graphics,
+        directX: req.body.requirements.directX,
+        storage: req.body.requirements.storage,
         },
-      genre: [{type: String}],
-      developer: {type: String},
-      publisher: {type: String},
-      releaseDate: {type: String},
-      steamAcheivments:[{type: String}],
-      languages: [{
-        languageName: {type: String},
-        interface: {type: Boolean},
-        fullAudio:  {type: Boolean},
-        subtitles:  {type: Boolean},
-        }],
-      attributes:{
-        achievements:  {type: Boolean},
-        controllerSupport:  {type: Boolean},
-        partialControllersupport:  {type: Boolean},
-        remotePlay: {type: Boolean}
+      genre: req.body.genre,
+      developer: req.body.developer,
+      publisher: req.body.publisher,
+      releaseDate: req.body.releaseDate,
+      steamAcheivments: req.body.steamAcheivments,
+      languages: req.body.languages,
+      attributes: {
+        achievements:  req.body.attributes.achievements,
+        controllerSupport:  req.body.attributes.controllerSupport,
+        partialControllersupport:  req.body.attributes.partialControllersupport,
+        remotePlay: req.body.attributes.remotePlay
         },
-      moreLikeThis: [{titleImage:{type: String}, price: {type: String}}]
+      moreLikeThis: req.body.moreLikeThis
+  }, (err) => {
+    if (err) {
+      throw err;
+    } else {
+      res.writeHead(201);
+      res.end('New Game Created')
     }
   })
-  res.send(console.log('it is working'))
+});
+
+app.put('/moist-air/game/', (req, res) => {
+
+  req.query.id = parseInt(req.query.id);
+  debugger;
+  Game.findOneAndUpdate({id: req.query.id}, {price: req.body.price}, (err, result ) => {
+   debugger;
+    if (err) {
+      throw err;
+    } else {
+      res.send(result)
+      console.log('Game Updated')
+    }
+  })
 })
 
 let server = app.listen(port, () => {
@@ -78,3 +93,6 @@ let server = app.listen(port, () => {
 
 module.exports.app = app;
 module.exports.server = server;
+
+
+
