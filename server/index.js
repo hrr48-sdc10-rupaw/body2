@@ -73,11 +73,8 @@ app.post('/moist-air/', (req, res) => {
 });
 
 app.put('/moist-air/game/', (req, res) => {
-
   req.query.id = parseInt(req.query.id);
-  debugger;
   Game.findOneAndUpdate({id: req.query.id}, {price: req.body.price}, (err, result ) => {
-   debugger;
     if (err) {
       throw err;
     } else {
@@ -85,7 +82,18 @@ app.put('/moist-air/game/', (req, res) => {
       console.log('Game Updated')
     }
   })
-})
+});
+
+app.delete('/moist-air/game', (req, res) => {
+  req.query.id = parseInt(req.query.id);
+  Game.deleteOne({id: req.query.id}, (err) => {
+    if (err) {
+      throw err;
+    } else {
+      res.end('Game Deleted')
+    }
+  })
+});
 
 let server = app.listen(port, () => {
   console.log(`listening at ${port}...`);
