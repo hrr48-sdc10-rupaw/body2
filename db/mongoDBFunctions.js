@@ -1,8 +1,16 @@
 const Game = require('../db/index.js');
 
-
+module.exports = {
 //get all
-const getAllGames =
+getAllGames: (req, res) => {
+  Game.find({}).exec((err, results) => {
+    if (err) {
+      throw err;
+    } else {
+      res.send(results)
+    }
+  })
+}
 
 
 //get 1 game by 'id'
@@ -20,4 +28,4 @@ const getAllGames =
 
 
 
-module.exports
+}

@@ -11,15 +11,11 @@ app.use(express.json());
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(express.static(path.join(__dirname, '../client/build')))
 
-app.get('/moist-air/', (req, res) => {
-  Game.find({}).exec((err, results) => {
-    if (err) {
-      throw err;
-    } else {
-      res.send(results)
-    }
-  })
-})
+//db switcher
+//mongoDB
+const db = require('../db/mongoDBFunctions.js')
+
+app.get('/moist-air/', db.getAllGames)
 
 app.get('/moist-air/game',(req, res)=>{
   reqId = req.query.id;
