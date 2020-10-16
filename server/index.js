@@ -12,17 +12,20 @@ app.use(express.static(path.join(__dirname, '../client/build')))
 
 //db switcher
 //mongoDB
-const db = require('../db/mongoDBFunctions.js')
+// const db = require('../db/mongoDBFunctions.js');
 
-app.get('/moist-air/', db.getAllGames);
+//postgresQL
+const db = require('../db/indexPostgreSQL.js');
 
-app.get('/moist-air/game', db.getOneGame);
+// app.get('/moist-air/', db.getAllGames);
 
-app.post('/moist-air/', db.postGame);
+// app.get('/moist-air/game', db.getOneGame);
 
-app.put('/moist-air/game/', db.updateGame);
+// app.post('/moist-air/', db.postGame);
 
-app.delete('/moist-air/game', db.deleteOneGame);
+// app.put('/moist-air/game/', db.updateGame);
+
+// app.delete('/moist-air/game', db.deleteOneGame);
 
 let server = app.listen(port, () => {
   console.log(`listening at ${port}...`);
