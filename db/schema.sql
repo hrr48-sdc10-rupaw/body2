@@ -41,3 +41,9 @@ CREATE TABLE languages (
 			fullAudio  BOOLEAN,
 			subtitles  BOOLEAN
 )
+
+
+CREATE TABLE genres (
+  id SERIAL NOT NULL PRIMARY KEY,
+  genreName VARCHAR (100)
+)

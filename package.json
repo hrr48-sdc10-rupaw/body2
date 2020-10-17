@@ -7,7 +7,8 @@
     "test": "jest --forceExit",
     "seed": "node db/seedData.js",
     "start": "nodemon server/index.js",
-    "create": "node db/modelsPostgres/Game.js"
+    "create": "node db/modelsPostgres/Game.js",
+    "dataGen": "node --max-old-space-size=16384 db/dataGeneration.js"
   },
   "repository": {
     "type": "git",
