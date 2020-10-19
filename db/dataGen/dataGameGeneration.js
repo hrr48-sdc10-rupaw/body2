@@ -2,15 +2,15 @@ const faker = require('faker');
 const fs = require('fs');
 
 
-const writeGames = fs.createWriteStream('games.csv');
-writeGames.write('id, titleCover, title, price, aboutInfo, os, processor, memory, graphics, directX, developer, publisher, releaseDate, steamAcheivment1, steamAcheivment2, steamAcheivment3, achievements, partialControllersupport, remotePlay, moreLikeThis\n', 'utf8');
+const writeGames = fs.createWriteStream('gamesTest.csv');
+writeGames.write('id, titleCover, title, price, aboutInfo, os, processor, memory, graphics, directX, developer, publisher, releaseDate, steamAcheivment1, steamAcheivment2, steamAcheivment3, achievements, partialControllersupport, remotePlay, mLT1TitleImage, mLT1price, mLT2TitleImage, mLT2price, mLT3TitleImage, mLT3price\n', 'utf8');
 
 const capitalize = (string) => {
   return string.charAt(0).toUpperCase() + string.slice(1);
 }
 const trueOrFalse = ['true', 'false'];
 const writeTenMillionGames = (writer, encoding, callback) => {
-  let i = 10000000;
+  let i = 100;
   let id = 0;
   function write() {
     let ok = true;
