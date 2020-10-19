@@ -1,4 +1,4 @@
-const Game = require('../db/index.js');
+const Game = require('./index.js');
 
 module.exports = {
 

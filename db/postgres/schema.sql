@@ -2,7 +2,7 @@ DROP DATABASE IF EXISTS sdc;
 
 CREATE DATABASE sdc;
 
-\conect sdc;
+-- \conect sdc;
 
 CREATE TABLE game (
   id SERIAL NOT NULL ,
@@ -16,17 +16,20 @@ CREATE TABLE game (
   graphics VARCHAR (250),
   directX VARCHAR (250),
   storage VARCHAR (250),
-
-	genre VARCHAR (250),
+  genre1 VARCHAR (250),
+	genre2 VARCHAR (250),
+  genre3 VARCHAR (250),
   developer VARCHAR (250),
   publisher VARCHAR (250),
   releaseDate VARCHAR (250),
-	steamAcheivments VARCHAR (250),
-
+	steamAcheivment1 VARCHAR (250),
+	steamAcheivment2 VARCHAR (250),
+	steamAcheivment3 VARCHAR (250),
   achievements  BOOLEAN,
   controllerSupport  BOOLEAN,
   partialControllersupport  BOOLEAN,
-  remotePlay BOOLEAN
+  remotePlay BOOLEAN,
+
 );
 
 CREATE TABLE morelikethis (
