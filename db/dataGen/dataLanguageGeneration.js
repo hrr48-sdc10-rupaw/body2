@@ -56,7 +56,7 @@ const write60MillionGamesLanguages = (writer, encoding, callback) => {
       i -= 1;
       id += 1;
       const gameId = Math.floor(Math.random() * 10000000) + 1;
-      const languageId = languageList[Math.floor(Math.random() * languageList.length)];
+      const languageId = Math.floor(Math.random() * languageList.length) + 1;
       const interface = trueOrFalse[Math.floor(Math.random() * trueOrFalse.length)];
       const fullAudio =  trueOrFalse[Math.floor(Math.random() * trueOrFalse.length)];
       const subtitles =  trueOrFalse[Math.floor(Math.random() * trueOrFalse.length)];

@@ -1,7 +1,7 @@
 const cassandra = require('cassandra-driver');
 
 
-const client = new cassandra.Client({ contactPoints:['localhost']});
+const client = new cassandra.Client({ contactPoints:['localhost'], localDataCenter: 'datacenter1', keyspace: 'game'});
 
 client.connect((err) => {
   if (err) {

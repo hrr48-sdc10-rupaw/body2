@@ -10,7 +10,8 @@
     "create": "node db/modelsPostgres/Game.js",
     "dataGenGame": "node --max-old-space-size=16384 db/dataGen/dataGameGeneration.js",
     "dataGenLanguage": "node --max-old-space-size=16384 db/dataGen/dataLanguageGeneration.js",
-    "dataGenGenre": "node --max-old-space-size=16384 db/dataGen/dataGenreGeneration.js"
+    "dataGenGenre": "node --max-old-space-size=16384 db/dataGen/dataGenreGeneration.js",
+    "seedPSQL": "psql < db/postgres/schema.sql"
 
   },
   "repository": {

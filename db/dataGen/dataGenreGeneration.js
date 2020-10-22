@@ -2,7 +2,7 @@ const fs = require('fs');
 
 
 const writeGenres = fs.createWriteStream('genres.csv');
-writeGenres.write('id, languageName\n', 'utf8');
+writeGenres.write('id, genreName\n', 'utf8');
 
 var genreList = ['Platform','Shooter','Fighting','Beat \'em up','Stealth','Survival','Battle Royale','Rhythm','Survival horror','Metroidvania','Text adventures','Graphic adventures','Action RPG','MMORPG','First-person party-based RPG','JRPG','Monster Collection','Construction and management simulation','Life simulation', 'Vehicle simulation','4X game','Artillery game','Auto battler (Auto chess)','RTS','RTT','TBS','TBT','Wargame','Grand strategy wargame','Racing','Sports game','Competitive','Sports-based fighting','Board game or card game','Casual','Digital collectible card game','Horror game','Idle game','Logic game','Mobile game','Party game','Programming game','Advergame','Art game','Casual game','Educational game','Esports','Exergame','Personalized game','Serious game','Survival-Action-Adventure','Cross-Genre','Narrative-Adventure','Sandbox','Creative','Open world'];
 
@@ -57,7 +57,7 @@ const write30MillionGamesGenres = (writer, encoding, callback) => {
       i -= 1;
       id += 1;
       const gameId = Math.floor(Math.random() * 10000000) + 1;
-      const genreId = Math.floor(Math.random() * genreList.length) + 1;
+      const genreId = Math.floor(Math.random() * 55) + 1;
       const data = `${id}, ${gameId}, ${genreId}\n`;
 
       if (i === 0) {

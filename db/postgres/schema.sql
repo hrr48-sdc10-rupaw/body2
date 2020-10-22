@@ -3,7 +3,10 @@
 -- CREATE DATABASE sdc;
 \c sdc;
 
--- DROP TABLE IF EXISTS games;
+SET maintenance_work_mem to '16GB';
+
+\timing;
+
 
 -- CREATE TABLE games (
 --   id SERIAL NOT NULL PRIMARY KEY,
@@ -34,12 +37,25 @@
 --   mLT3price VARCHAR (250)
 -- );
 
+-- -- games table
+-- COPY games (id, titleCover, title, price, aboutInfo, os, processor, memory, graphics, directX, storage, developer, publisher, releaseDate, steamAcheivment1, steamAcheivment2, steamAcheivment3, achievements, partialControllersupport, remotePlay, mLT1TitleImage, mLT1price, mLT2TitleImage, mLT2price, mLT3TitleImage, mLT3price)
+-- FROM '/Users/michael/Documents/Galvanize/HRR48/SDC/SDC-Project/body/games.csv'
+-- DELIMITER ','
+-- CSV HEADER;
+
 -- DROP TABLE IF EXISTS languages;
 
 -- CREATE TABLE languages (
 --   id SERIAL NOT NULL PRIMARY KEY,
 --   languageName VARCHAR (250)
 -- );
+
+-- -- languages table
+
+-- COPY languages (id, languageName)
+-- FROM '/Users/michael/Documents/Galvanize/HRR48/SDC/SDC-Project/body/genres.csv'
+-- DELIMITER ','
+-- CSV HEADER;
 
 -- DROP TABLE IF EXISTS gameLanguages;
 
@@ -59,6 +75,12 @@
 --         References games(id)
 -- );
 
+-- -- gamelanguages table
+-- COPY gameLanguages (id, gameId, languageId, interface, fullAudio, subtitles)
+-- FROM '/Users/michael/Documents/Galvanize/HRR48/SDC/SDC-Project/body/games-languages.csv'
+-- DELIMITER ','
+-- CSV HEADER;
+
 -- DROP TABLE IF EXISTS genres;
 
 -- CREATE TABLE genres (
@@ -66,21 +88,33 @@
 --   genreName VARCHAR (100)
 -- );
 
+-- -- genres table
+-- COPY genres (id, genreName)
+-- FROM '/Users/michael/Documents/Galvanize/HRR48/SDC/SDC-Project/body/genres.csv'
+-- DELIMITER ','
+-- CSV HEADER;
+
 -- DROP TABLE IF EXISTS gameGenres;
 
 -- CREATE TABLE gameGenres (
 --   id SERIAL NOT NULL PRIMARY KEY,
 --   gameId INT,
---   genreId INT,
---    CONSTRAINT fk_genreId
---       FOREIGN KEY(genreId)
---         REFERENCES genres(id),
---     CONSTRAINT fk_gameId
---       FOREIGN KEY(gameId)
---         References games(id)
+--   genreId INT
 -- );
 
-COPY games (id, titleCover, title, price, aboutInfo, os, processor, memory, graphics, directX, developer, publisher, releaseDate, steamAcheivment1, steamAcheivment2, steamAcheivment3, achievements, partialControllersupport, remotePlay, mLT1TitleImage, mLT1price, mLT2TitleImage, mLT2price, mLT3TitleImage, mLT3price)
-FROM '/Users/michael/Documents/Galvanize/HRR48/SDC/SDC-Project/body/gamesTest.csv'
-DELIMITER ','
-CSV HEADER;
+-- -- gamegenres table
+
+-- COPY gameGenres (id, gameId, genreId)
+-- FROM '/Users/michael/Documents/Galvanize/HRR48/SDC/SDC-Project/body/games-genres.csv'
+-- DELIMITER ','
+-- CSV HEADER;
+
+-- ALTER TABLE gameGenres
+--   ADD CONSTRAINT fk_genreId
+--       FOREIGN KEY(genreId)
+--         REFERENCES genres(id);
+
+-- ALTER TABLE gameGenres
+--   ADD CONSTRAINT fk_gameId
+--       FOREIGN KEY(gameId)
+--         References games(id)

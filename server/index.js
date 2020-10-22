@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
-var cors = require('cors')
+const cors = require('cors')
 const path = require('path')
 const port = 3000;
 
@@ -15,12 +15,12 @@ app.use(express.static(path.join(__dirname, '../client/build')))
 // const db = require('../db/mongo/mongoDBFunctions.js');
 
 //postgresQL
-const db = require('../db/postgres/indexPostgreSQL.js');
+// const db = require('../db/postgres/controllersPostgres.js');
 
 //cassandra
-// const db = require('../db/cassandra/indexCassandra.js')
+const db = require('../db/cassandra/indexCassandra.js')
 
-// app.get('/moist-air/', db.getAllGames);
+// app.get('/moist-air/',  db.getAllGames);
 
 // app.get('/moist-air/game', db.getOneGame);
 
