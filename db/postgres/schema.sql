@@ -12,7 +12,7 @@ CREATE TABLE games (
   titlecover VARCHAR (250),
   title VARCHAR (250),
   price VARCHAR (250),
-  aboutInfo VARCHAR (500),
+  aboutInfo VARCHAR (5000),
   requirements VARCHAR (500),
   genre VARCHAR (500),
   developer VARCHAR (250),

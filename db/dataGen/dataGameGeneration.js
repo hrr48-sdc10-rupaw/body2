@@ -2,7 +2,7 @@ const faker = require('faker');
 const fs = require('fs');
 
 
-const writeGames = fs.createWriteStream('gamesPostgreSQlTest.csv');
+const writeGames = fs.createWriteStream('games.csv');
 writeGames.write('id, titleCover, title, price, aboutInfo, requirements, genre, developer, publisher, releaseDate, steamAcheivments, languages, attributes, moreLikeThis\n', 'utf8');
 
 const commaRemover = (string) => {
@@ -61,7 +61,7 @@ const attributesMaker = () => {
 }
 
 const writeTenMillionGames = (writer, encoding, callback) => {
-  let i = 100;
+  let i = 10000000;
   let id = 0;
 
 
@@ -99,12 +99,12 @@ const writeTenMillionGames = (writer, encoding, callback) => {
       const titleCover = 'https://sdc-moistair.s3.amazonaws.com/kingdom-hearts-img.jp2';
       const title = faker.commerce.productName();
       const price = `${Math.floor(Math.random() * 200) + 1}.99`;
-      const aboutInfo = faker.lorem.paragraph();
+      const aboutInfo = `${faker.lorem.paragraph()}`;
       const requirements = `${commaRemover(requirementsMaker())}`
       const genre = `${listPicker(genreList)}, ${listPicker(genreList)}, ${listPicker(genreList)}, ${listPicker(genreList)}, ${listPicker(genreList)}`
       const developer = commaRemover(faker.random.word());
       const publisher = commaRemover(faker.random.word());
-      const releaseDate = faker.date.between('2000-01-01', '2020-11-13');
+      const releaseDate = `${faker.date.between('2000-01-01', '2020-11-13')}`;
       const steamAcheivments = 'https://sdc-moistair.s3.amazonaws.com/612-100x100.jpg,https://sdc-moistair.s3.amazonaws.com/818-100x100.jpg,https://sdc-moistair.s3.amazonaws.com/869-100x100.jpg';
       const languages = `${commaRemover(languageMaker(languageList))}`;
       const attributes = `${attributesMaker()}`
@@ -121,6 +121,7 @@ const writeTenMillionGames = (writer, encoding, callback) => {
       }
     } while (i > 0 && ok);
     if (i > 0) {
+
       console.log('Writing Record' + id);
       writer.once('drain', write);
     }
