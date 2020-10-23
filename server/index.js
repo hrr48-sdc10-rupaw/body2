@@ -12,10 +12,10 @@ app.use(express.static(path.join(__dirname, '../client/build')))
 
 //db switcher
 //mongoDB
-const db = require('../db/mongo/mongoDBFunctions.js');
+// const db = require('../db/mongo/mongoDBFunctions.js');
 
 //postgresQL
-// const db = require('../db/postgres/controllersPostgres.js');
+const db = require('../db/postgres/controllersPostgres.js');
 
 //cassandra
 // const db = require('../db/cassandra/controllersCassandra.js')

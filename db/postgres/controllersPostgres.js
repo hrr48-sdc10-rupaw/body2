@@ -9,17 +9,26 @@ module.exports = {
       if (err) {
         throw err;
       } else {
-
-        const objParser = function(array) {
+        // console.log(results.rows[0])
+        const objArrayParser = function(array) {
           var newArray = [];
           for (var i = 0; i < array.length; i++) {
             var currentObj = array[i];
-            var newObjString = '';
             var tempArray = currentObj.split('&');
             var newObj = tempArray.join('"')
             newArray.push(JSON.parse(newObj))
           }
           return newArray;
+        }
+        const objParser = (array) => {
+          console.log(array)
+          var newObjString = array.join('"');
+          console.log('newObjString: ' + newObjString)
+
+          // console.log('newObj: ' + newObj)
+          console.log('object parsed')
+          return JSON.parse(newObjString);
+
         }
         game = {
           id: results.rows[0].id,
@@ -27,25 +36,25 @@ module.exports = {
           title: results.rows[0].title,
           price: results.rows[0].price,
           aboutInfo: results.rows[0].aboutInfo,
-          os: results.rows[0].os,
-          processor: results.rows[0].processor,
-          memory: results.rows[0].memory,
-          graphics: results.rows[0].graphics,
-          directX: results.rows[0].directX,
-          storage: results.rows[0].storage,
+          requirements: results.rows[0].requirements.split('&'),
           genre: results.rows[0].genre.split(','),
           developer: results.rows[0].developer,
           publisher: results.rows[0].publisher,
           releaseDate: results.rows[0].releaseDate,
           steamAcheivments: results.rows[0].steamacheivments.split(','),
           languages: results.rows[0].languages.split('*'),
-          achievements: results.rows[0].achievements,
-          partialControllersupport: results.rows[0].partialControllersupport,
-          remotePlay : results.rows[0].remotePlay,
+          attributes: results.rows[0].attributes.split('&'),
           moreLikeThis: results.rows[0].morelikethis.split('*')
         }
-        game.languages = objParser(game.languages);
-        game.moreLikeThis = objParser(game.moreLikeThis);
+
+        game.languages = objArrayParser(game.languages);
+        game.moreLikeThis = objArrayParser(game.moreLikeThis);
+
+        console.log(game.languages)
+        game.requirements = objParser(game.requirements);
+        console.log(game.requirements)
+        game.attributes = objParser(game.attributes);
+        console.log(game.attributes)
 
         res.status(200).json(game);
         res.end(console.log('Game Recieved'))
