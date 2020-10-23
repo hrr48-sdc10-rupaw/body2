@@ -24,7 +24,7 @@ const db = require('../db/postgres/controllersPostgres.js');
 
 app.get('/moist-air/game', db.getOneGame);
 
-// app.post('/moist-air/', db.postGame);
+app.post('/moist-air/', db.postGame);
 
 // app.put('/moist-air/game/', db.updateGame);
 

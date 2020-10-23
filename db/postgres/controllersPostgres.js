@@ -50,13 +50,32 @@ module.exports = {
         console.timeEnd();
       }
     })
+  },
+
+
+  postGame: (req, res) => {
+    var params = [req.body.id,
+      req.body.titleCover,
+      req.body.title,
+      req.body.price,
+      req.body.aboutInfo,
+      req.body.requirements,
+      req.body.genre,
+      req.body.developer,
+      req.body.publisher,
+      req.body.releaseDate,
+      req.body.steamAcheivments,
+      req.body.languages,
+      req.body.attributes,
+      req.body.moreLikeThis];
+    db.insertOne(params, (err, results) => {
+      if (err) {
+        throw err
+      } else {
+        res.sendStatus(201);
+        res.end('Game Created')
+      }
+    })
   }
 }
 
-
-// const parseOBJ = (array) => {
-//   for (var i = 0; i < array.length; i++) {
-//     array[i] =
-//   }
-//   return array;
-// }
