@@ -12,17 +12,17 @@ app.use(express.static(path.join(__dirname, '../client/build')))
 
 //db switcher
 //mongoDB
-// const db = require('../db/mongo/mongoDBFunctions.js');
+const db = require('../db/mongo/mongoDBFunctions.js');
 
 //postgresQL
 // const db = require('../db/postgres/controllersPostgres.js');
 
 //cassandra
-const db = require('../db/cassandra/indexCassandra.js')
+// const db = require('../db/cassandra/controllersCassandra.js')
 
 // app.get('/moist-air/',  db.getAllGames);
 
-// app.get('/moist-air/game', db.getOneGame);
+app.get('/moist-air/game', db.getOneGame);
 
 // app.post('/moist-air/', db.postGame);
 
