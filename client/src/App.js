@@ -31,11 +31,10 @@ class App extends React.Component {
     let id = parseInt(urlParams.get('id')) || 1;
     console.log(id);
     axios.get(`/moist-air/game?id=${id}`)
-
     .then((res)=>{
       console.log(res)
       this.setState({
-        currentGame: res.data[0]
+        currentGame: res.data
       })
     })
   }

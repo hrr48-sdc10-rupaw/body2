@@ -26,7 +26,7 @@ CREATE TABLE games (
 
 -- games table
 COPY games (id, titleCover, title, price, aboutInfo, requirements, genre, developer, publisher, releaseDate, steamAcheivments, languages, attributes, moreLikeThis)
-FROM '/Users/michael/Documents/Galvanize/HRR48/SDC/SDC-Project/body/gamesPostgreSQLTest.csv'
+FROM '/Users/michael/Documents/Galvanize/HRR48/SDC/SDC-Project/body/games.csv'
 DELIMITER '|'
 CSV HEADER;
 
