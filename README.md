@@ -7,7 +7,9 @@ In you terminal in the root folder run the following scripts:
 
 - Run script "npm install" to install dependencies
 
-- Run script "npm run seed" to seed the database
+- Run script "npm run dataGenGame"
+
+- Run script "npm run seedPSQL" to seed the database
 
 - Run script "npm start" to start server
 
