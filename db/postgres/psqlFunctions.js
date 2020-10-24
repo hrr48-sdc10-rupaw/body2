@@ -7,8 +7,6 @@ module.exports = {
   getOne: (params, callback) => {
     const queryString =
     'SELECT * FROM games WHERE id = $1';
-
-
     db.query(queryString, params, (err, results) => {
       if (err) {
         throw err;

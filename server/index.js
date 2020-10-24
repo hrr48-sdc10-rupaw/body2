@@ -1,3 +1,4 @@
+const newrelic = require('newrelic')
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
@@ -9,6 +10,8 @@ app.use(cors())
 app.use(express.json());
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(express.static(path.join(__dirname, '../client/build')))
+
+//comment and uncomment lines below to switch things on and off
 
 //db switcher
 //mongoDB
@@ -24,7 +27,7 @@ const db = require('../db/postgres/controllersPostgres.js');
 
 app.get('/moist-air/game', db.getOneGame);
 
-app.post('/moist-air/', db.postGame);
+app.post('/moist-air/game', db.postGame);
 
 // app.put('/moist-air/game/', db.updateGame);
 

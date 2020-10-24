@@ -3,7 +3,6 @@ const db = require('./psqlFunctions.js');
 
 module.exports = {
   getOneGame: (req, res) => {
-    console.time();
     var reqId = [req.query.id];
     db.getOne(reqId, (err, results) => {
       if (err) {
@@ -44,10 +43,8 @@ module.exports = {
         game.moreLikeThis = objArrayParser(game.moreLikeThis);
         game.requirements = objParser(game.requirements);
         game.attributes = objParser(game.attributes);
-        console.log(game)
         res.json(game);
         res.end(console.log('Game Recieved'))
-        console.timeEnd();
       }
     })
   },
@@ -72,8 +69,7 @@ module.exports = {
       if (err) {
         throw err
       } else {
-        res.sendStatus(201);
-        res.end('Game Created')
+        res.status(201).end(console.log('Game Created'))
       }
     })
   }
