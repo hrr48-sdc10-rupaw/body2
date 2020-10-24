@@ -88,7 +88,7 @@ let SeedDb = async ()=>{
   hk.save((err)=>{if(err){console.log(err)}});
   let pictures = ['https://s3.us-east-2.amazonaws.com/images.for.hrr/869-100x100.jpg', 'https://s3.us-east-2.amazonaws.com/images.for.hrr/818-100x100.jpg','https://s3.us-east-2.amazonaws.com/images.for.hrr/612-100x100.jpg'];
 
-  for(var i = 2; i <= 100; i++){
+	for(var i = 2; i <= 100; i++){
 
     game = new Game({
 			id: i,

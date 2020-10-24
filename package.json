@@ -5,8 +5,14 @@
   "main": "index.js",
   "scripts": {
     "test": "jest --forceExit",
-    "seed": "node db/seedData.js",
-    "start": "nodemon server/index.js"
+    "seed": "node db/mongo/seedData.js",
+    "start": "nodemon server/index.js",
+    "create": "node db/modelsPostgres/Game.js",
+    "dataGenGame": "node --max-old-space-size=16384 db/dataGen/dataGameGeneration.js",
+    "dataGenLanguage": "node --max-old-space-size=16384 db/dataGen/dataLanguageGeneration.js",
+    "dataGenGenre": "node --max-old-space-size=16384 db/dataGen/dataGenreGeneration.js",
+    "seedPSQL": "psql < db/postgres/schema.sql",
+    "k6": "k6 run k6.js"
   },
   "repository": {
     "type": "git",
@@ -21,14 +27,22 @@
   "dependencies": {
     "bluebird": "^3.7.2",
     "body-parser": "^1.19.0",
+    "cassandra-driver": "^4.6.0",
     "cors": "^2.8.5",
     "express": "^4.17.1",
+    "express-cassandra": "^2.5.0",
     "faker": "^5.1.0",
     "glob": "^7.1.6",
     "mocha": "^8.1.3",
     "mongo": "^0.1.0",
     "mongoose": "^5.10.6",
+    "newrelic": "^6.13.2",
+    "node-cassandra-cql": "^0.4.4",
     "nodemon": "^2.0.4",
+    "path": "^0.12.7",
+    "pg": "^8.4.1",
+    "pg-hstore": "^2.3.3",
+    "sequelize": "^6.3.5",
     "supertest": "^5.0.0"
   },
   "devDependencies": {

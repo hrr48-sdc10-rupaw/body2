@@ -1,27 +1,37 @@
+const newrelic = require('newrelic')
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
-var cors = require('cors')
+const cors = require('cors')
 const path = require('path')
 const port = 3000;
-const Game = require('../db/index.js');
 
 app.use(cors())
-app.use(express.json())
+app.use(express.json());
+app.use(bodyParser.urlencoded({extended: false}));
 app.use(express.static(path.join(__dirname, '../client/build')))
 
-app.get('/moist-air/game',(req, res)=>{
-  reqId = req.query.id;
-  let data = Game.find({'id': reqId});
+//comment and uncomment lines below to switch things on and off
 
-  data.exec((err, gameData)=>{
-    if(err){
-      res.send('there was an error');
-    } else {
-      res.send(gameData);
-    }
-  })
-})
+//db switcher
+//mongoDB
+// const db = require('../db/mongo/mongoDBFunctions.js');
+
+//postgresQL
+const db = require('../db/postgres/controllersPostgres.js');
+
+//cassandra
+// const db = require('../db/cassandra/controllersCassandra.js')
+
+// app.get('/moist-air/',  db.getAllGames);
+
+app.get('/moist-air/game', db.getOneGame);
+
+app.post('/moist-air/game', db.postGame);
+
+// app.put('/moist-air/game/', db.updateGame);
+
+// app.delete('/moist-air/game', db.deleteOneGame);v
 
 let server = app.listen(port, () => {
   console.log(`listening at ${port}...`);
@@ -29,3 +39,6 @@ let server = app.listen(port, () => {
 
 module.exports.app = app;
 module.exports.server = server;
+
+
+
