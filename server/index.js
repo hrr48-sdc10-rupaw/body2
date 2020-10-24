@@ -31,7 +31,7 @@ app.post('/moist-air/game', db.postGame);
 
 // app.put('/moist-air/game/', db.updateGame);
 
-// app.delete('/moist-air/game', db.deleteOneGame);
+// app.delete('/moist-air/game', db.deleteOneGame);v
 
 let server = app.listen(port, () => {
   console.log(`listening at ${port}...`);
